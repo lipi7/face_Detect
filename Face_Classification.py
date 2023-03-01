@@ -3,13 +3,13 @@ import cv2
 
 cap = cv2.VideoCapture(0)
 
-eye_cascade = cv2.CascadeClassfifier('E:\OpenCV_Proj\haarcascade_eye.xml')
-face_cascade = cv2.CascadeClassfifier("E:\OpenCV\haarcascade_frontalface_alt.xml")
+eye_cascade = cv2.CascadeClassifier(cv2.data.haarcascade+'haarcascade_eye.xml')
+face_cascade = cv2.CascadeClassifier(cv2.data.haarcascade+"haarcascade_frontalface_alt.xml")
 
-smile_cascade = cv2.CascadeClassfifier('E:\OpenCV\haarcascade_smile.xml')
+smile_cascade = cv2.CascadeClassifier(cv2.data.haarcascade+'haarcascade_smile.xml')
 
 
-while(1):
+while 1:
     ret , img = cap.read()
     gray = img
     faces = face_cascade.DetectMultiScale(gray,1.3,5)
