@@ -10,7 +10,7 @@ smile_cascade = cv2.CascadeClassfifier('E:\OpenCV\haarcascade_smile.xml')
 
 
 while(1):
-    ret , img = cv2.read()
+    ret , img = cap.read()
     gray = img
     faces = face_cascade.DetectMultiScale(gray,1.3,5)
 
